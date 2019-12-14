@@ -28,7 +28,7 @@ public class Shop {
 		do {
 			System.out.println("Podaj login:");
 			String login = scan.nextLine();
-			System.out.println("Podaj has³o:");
+			System.out.println("Podaj hasÂ³o:");
 			String pass = scan.nextLine();
 			
 			if (users.containsKey(login) && users.get(login).getPassword().equals(pass)) {
@@ -37,21 +37,21 @@ public class Shop {
 					//admin
 					Boolean doLogout = false;
 					do {
-						System.out.println("[1]. Dodaj u¿ytkownika");
-						System.out.println("[2]. Lista u¿ytkowników");
+						System.out.println("[1]. Dodaj uÅ¼ytkownika");
+						System.out.println("[2]. Lista uÅ¼ytkownikÃ³w");
 						System.out.println("[3]. Dodaj produkt");
-						System.out.println("[4]. Lista produktów");
-						System.out.println("[5]. Zmieñ iloœæ produktu");
-						System.out.println("[10]. Wyjœcie ze sklepu");
-						System.out.println("[11]. Wyjœcie ze sklepu");
+						System.out.println("[4]. Lista produktÃ³w");
+						System.out.println("[5]. ZmieÅ„ iloÅ›Ä‡ produktu");
+						System.out.println("[10]. Wylogowanie");
+						System.out.println("[11]. WyjÅ›cie ze sklepu");
 						String userChoice = scan.nextLine();
 						switch (userChoice) {
 							case "1" : {
-								System.out.println("Login dla nowego u¿ytkownika: ");
+								System.out.println("Login dla nowego uÅ¼ytkownika: ");
 								String newUserLogin = scan.nextLine();
-								System.out.println("Password dla nowego u¿ytkownika: ");
+								System.out.println("Password dla nowego uÅ¼ytkownika: ");
 								String newUserPass = scan.nextLine();
-								System.out.println("Nazwa dla nowego u¿ytkownika: ");
+								System.out.println("Nazwa dla nowego uÅ¼ytkownika: ");
 								String newUserName = scan.nextLine();
 								addUser(newUserLogin, newUserPass, newUserName);
 								break;
@@ -66,7 +66,7 @@ public class Shop {
 								String newItemName = scan.nextLine();
 								System.out.println("Cena dla nowego produktu: ");
 								String newItemPrice = scan.nextLine();
-								System.out.println("Iloœæ dla nowego produktu: ");
+								System.out.println("IloÅ›Ä‡ dla nowego produktu: ");
 								int newItemAmount = scan.nextInt();
 								if (scan.hasNextLine()) scan.nextLine();
 								Item newItem = itemMgr.createItem(newItemName, newItemPrice, newItemAmount);
@@ -74,16 +74,16 @@ public class Shop {
 							}
 							case "4" : {
 								int i = 0;
-								System.out.println("Lista produktów:");
+								System.out.println("Lista produktÃ³w:");
 								for (Item item : itemMgr.getItems())
-									System.out.println("Produkt [" + i++ + "]: " + item.getName() + ", cena: " + item.getPrice() + ", iloœæ w magazynie: " + item.getAmount());
+									System.out.println("Produkt [" + i++ + "]: " + item.getName() + ", cena: " + item.getPrice() + ", iloÅ›Ä‡ w magazynie: " + item.getAmount());
 								break;
 							}
 							case "5" : {
 								System.out.println("Wybierz produkt: ");
 								int itemIndex = scan.nextInt();
 								if (scan.hasNextLine()) scan.nextLine();
-								System.out.println("Nowa iloœæ dla produktu: ");
+								System.out.println("Nowa iloÅ›Ä‡ dla produktu: ");
 								int itemAmount = scan.nextInt();
 								if (scan.hasNextLine()) scan.nextLine();
 								itemMgr.getItems().get(itemIndex).setAmount(itemAmount);
@@ -105,7 +105,7 @@ public class Shop {
 					//user
 				}
 			} else {
-				System.out.println("Niew³aœciwy login lub has³o");
+				System.out.println("NiewÅ‚aÅ›ciwy login lub hasÅ‚o");
 			}
 		} while (doStop == false);
 		
